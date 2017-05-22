@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: flask-app-example
+Version: 0.1
+Summary: A demo app on how to deploy Python apps developed with the Flask framework
+Home-page: http://nilportugues.com/
+Author: Nil Portugués Calderó
+Author-email: contact@nilportugues.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  flask_app_example:
+    build: ./docker
+    container_name: flask_app_example
+    volumes_from:
+      - flask_app_example_build
+    ports:
+      - "80:8080"
+      - "8080:8080"
+      - "9191:9191"
+
+  flask_app_example_build:
+    image: tianon/true
+    volumes:
+      - ./example/dist/flask_app_example-0.1.tar.gz:/tmp/flask_app_example-0.1.tar.gz
