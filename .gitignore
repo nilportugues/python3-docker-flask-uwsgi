@@ -1,5 +1,4 @@
 example/dist/ 
-example/flask_app.egg-info/
-test/
+deploy/ 
 .idea/
-
+example/flask_app_example.egg-info/
