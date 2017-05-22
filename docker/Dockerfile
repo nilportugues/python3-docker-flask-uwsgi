@@ -1,6 +1,5 @@
-FROM ubuntu:latest
-
-LABEL Description="A container for the production hosting of a flask application" Vendor="none" Version="0.1"
+FROM ubuntu:16.04
+LABEL Description="A container for the production hosting of a flask application"
 
 RUN apt-get update && apt-get upgrade -y
 
@@ -14,8 +13,8 @@ RUN pip3 install --upgrade pip
 RUN pip3 install flask uwsgi
 
 
-COPY ./flask_app_example-0.1.tar.gz build.tar.gz
-RUN pip3 install build.tar.gz --upgrade
+COPY ./flask_app_example-0.1.tar.gz /tmp/build.tar.gz
+RUN pip3 install /tmp/build.tar.gz --upgrade
 
 ## Copy files for uwsgi
 RUN mkdir -p /opt/uwsgi/
@@ -28,7 +27,6 @@ RUN rm /etc/nginx/sites-enabled/default
 
 # Exposed ports
 EXPOSE 80
-
 
 ## Copy over the entrypoint
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
